@@ -1,8 +1,7 @@
-import { TxHash } from './../../../node_modules/@utxorpc/sdk/src/cardano';
 import { openai } from '@ai-sdk/openai';
-import { streamText, tool } from 'ai';
+import { streamText } from 'ai';
 import { CardanoToolKit, createVercelCardanoTools } from 'cardano-agent-kit';
-import { z } from 'zod';
+
 const toolkit = new CardanoToolKit(
     process.env.CARDANO_PROVIDER ?? '',
     process.env.CARDANO_PROVIDER_API_KEY ?? '',
