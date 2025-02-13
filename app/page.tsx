@@ -8,11 +8,12 @@ export default function Page() {
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
-            <div className="w-full max-w-7xl bg-white shadow-lg rounded-lg p-6 flex flex-col">
+            <div className="w-full max-w-7xl bg-white shadow-lg rounded-lg p-6 flex flex-col h-[90vh]">
+                {' '}
+                {/* Full height */}
                 <h1 className="text-2xl font-bold text-gray-800 text-center mb-4">AI Chat Assistant</h1>
-
                 {/* Chat Messages Container */}
-                <div className="h-96 overflow-y-auto border border-gray-300 rounded-lg p-4 mb-4 bg-gray-50">
+                <div className="flex-1 overflow-y-auto border border-gray-300 rounded-lg p-4 mb-4 bg-gray-50">
                     {messages.map((message) => (
                         <div
                             key={message.id}
@@ -26,10 +27,8 @@ export default function Page() {
                         </div>
                     ))}
                 </div>
-
                 {/* Error Display */}
                 {error && <div className="text-red-500 text-sm mb-2">Error: {error.message}</div>}
-
                 {/* Input Form */}
                 <form onSubmit={handleSubmit} className="flex space-x-2">
                     <input
